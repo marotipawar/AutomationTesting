@@ -1,4 +1,4 @@
-package com.maroti.assignment;
+package com.maroti.assignment.myassignment;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
