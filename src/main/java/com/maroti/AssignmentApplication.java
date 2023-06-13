@@ -18,7 +18,7 @@ public class AssignmentApplication
             services.openUrl("https://www.google.com");
         // 2) capture URl
             System.out.println("Google Url : "+services.captureUrl());
-        // 3) navigate to Github application
+
             services.navigateTo("https://www.github.com");
         // 4) capture url
             System.out.println("Github Url :"+services.captureUrl());
