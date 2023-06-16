@@ -11,6 +11,9 @@ public class SauceShoppingApplication {
         SauceServices shop = new SauceServiceImpl(new ChromeDriver());
         shop.login("standard_user","secret_sauce");
         shop.addItemToCart();
+        shop.checkOut();
+        shop.deliver();
+        shop.finish();
 
 
     }

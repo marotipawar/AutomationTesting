@@ -13,12 +13,12 @@ import java.util.List;
 import java.util.Map;
 
 public class SauceServiceImpl implements SauceServices {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public SauceServiceImpl(WebDriver driver) {
         this.driver = driver;
         driver.get("https://www.saucedemo.com/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8000));
     }
 
     @Override
@@ -42,5 +42,25 @@ public class SauceServiceImpl implements SauceServices {
         driver.findElement(CartElements.LIGHT).click();
         driver.findElement(CartElements.CART).click();
 
+    }
+
+    @Override
+    public void checkOut() {
+
+        driver.findElement(By.xpath("//button[@id='checkout']")).click();
+
+    }
+
+    @Override
+    public void deliver() {
+        driver.findElement(By.id("first-name")).sendKeys("Maroti");
+        driver.findElement(By.id("last-name")).sendKeys("Pawar");
+        driver.findElement(By.id("postal-code")).sendKeys("400001");
+        driver.findElement(By.xpath("//input[@type='submit']")).click();
+    }
+
+    @Override
+    public void finish() {
+        driver.findElement(By.xpath("//button[@id='finish']")).click();
     }
 }
