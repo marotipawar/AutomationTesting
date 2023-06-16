@@ -1,13 +1,9 @@
 package com.maroti.telecomm;
 
-import com.maroti.telecomm.model.Customer;
 import com.maroti.telecomm.services.JioServices;
 import com.maroti.telecomm.util.StartWebSite;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
 /*
@@ -19,14 +15,19 @@ public class JioTeleCommApplication {
 
         StartWebSite site=StartWebSite.builder().driver(new ChromeDriver()).url("https://demo.guru99.com/telecom/index.html").build();
         JioServices services =site.jioServices();
+       //opening browser
         WebDriver driver=services.start(site.getDriver(),site.getUrl());
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+
+        //Add new Customer
         services.addCustomer();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+
+        //Add Tariff plan
         services.setTariffPlan();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+
+        //Allocate tariff plan to customer
         services.addTariffPlanToCustomer();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+
+        //Pay bill
         services.payBill();
 
 

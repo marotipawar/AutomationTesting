@@ -1,16 +1,15 @@
-package com.maroti.telecomm.model;
+package com.maroti.telecomm.ui;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Customer {
+public class CustomerElement {
     private Integer id;
     private WebElement background;
     private WebElement firstName;

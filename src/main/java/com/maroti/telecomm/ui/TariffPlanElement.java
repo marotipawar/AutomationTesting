@@ -1,4 +1,4 @@
-package com.maroti.telecomm.model;
+package com.maroti.telecomm.ui;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TariffPlan {
+public class TariffPlanElement {
     private WebElement rental;
     private WebElement local_minutes;
     private WebElement inter_minutes;

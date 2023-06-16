@@ -1,7 +1,7 @@
 package com.maroti.telecomm.servicesimpl;
 
-import com.maroti.telecomm.model.Customer;
-import com.maroti.telecomm.model.TariffPlan;
+import com.maroti.telecomm.ui.CustomerElement;
+import com.maroti.telecomm.ui.TariffPlanElement;
 import com.maroti.telecomm.services.JioServices;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,12 +13,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
-import java.util.Set;
 
 
 @Data
@@ -47,16 +43,16 @@ public class JioServiceImpl implements JioServices {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 
-        Customer customer =getCustomer();
+        CustomerElement customerElement =getCustomer();
 
         JavascriptExecutor ex = (JavascriptExecutor)driver;
-        ex.executeScript("arguments[0].click();", customer.getBackground());
-        if(checkElementStatus(customer.getFirstName()))customer.getFirstName().sendKeys("Maroti");
-        if(checkElementStatus(customer.getLastName()))customer.getLastName().sendKeys("Pawar");
-        if(checkElementStatus(customer.getEmail()))customer.getEmail().sendKeys("pr.maroti@gmail.com");
-        if(checkElementStatus(customer.getEmail()))customer.getMobile().sendKeys("9876543210");
-        if(checkElementStatus(customer.getEmail()))customer.getAddress().sendKeys("Somewhere in Maharashtra");
-        if(checkElementStatus(customer.getBtnSubmit()))customer.getBtnSubmit().click();
+        ex.executeScript("arguments[0].click();", customerElement.getBackground());
+        if(checkElementStatus(customerElement.getFirstName())) customerElement.getFirstName().sendKeys("Maroti");
+        if(checkElementStatus(customerElement.getLastName())) customerElement.getLastName().sendKeys("Pawar");
+        if(checkElementStatus(customerElement.getEmail())) customerElement.getEmail().sendKeys("pr.maroti@gmail.com");
+        if(checkElementStatus(customerElement.getEmail())) customerElement.getMobile().sendKeys("9876543210");
+        if(checkElementStatus(customerElement.getEmail())) customerElement.getAddress().sendKeys("Somewhere in Maharashtra");
+        if(checkElementStatus(customerElement.getBtnSubmit())) customerElement.getBtnSubmit().click();
         String customerId=driver.findElement(By.xpath("//table[@class='alt access']/tbody/tr[1]/td[2]/h3")).getText();
         System.out.println("Customer ID :"+ customerId);
         setCustId(customerId);
@@ -69,7 +65,7 @@ public class JioServiceImpl implements JioServices {
         driver.findElement(By.xpath("//div/h3/a[@href='addtariffplans.php']")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
 
-        TariffPlan plan = getTariffPlan();
+        TariffPlanElement plan = getTariffPlan();
         if(checkElementStatus(plan.getRental()))plan.getRental().sendKeys("459");
         if(checkElementStatus(plan.getLocal_minutes()))plan.getLocal_minutes().sendKeys("10000");
         if(checkElementStatus(plan.getInter_minutes()))plan.getInter_minutes().sendKeys("50000");
@@ -83,8 +79,8 @@ public class JioServiceImpl implements JioServices {
         driver.findElement(By.xpath("//a[@href='index.html']")).click();
 
     }
-    public TariffPlan getTariffPlan(){
-        return TariffPlan.builder()
+    public TariffPlanElement getTariffPlan(){
+        return TariffPlanElement.builder()
                 .rental(driver.findElement(By.xpath("//input[@name='rental']")))
                 .local_minutes(driver.findElement(By.xpath("//input[@name='local_minutes']")))
                 .inter_minutes(driver.findElement(By.xpath("//input[@name='inter_minutes']")))
@@ -97,9 +93,9 @@ public class JioServiceImpl implements JioServices {
     }
 
     @Override
-    public Customer getCustomer() {
+    public CustomerElement getCustomer() {
 
-        return  Customer.builder()
+        return  CustomerElement.builder()
                 .background(driver.findElement(By.xpath("//input[@id='done']")))
                 .firstName(driver.findElement(By.xpath("//input[@name='fname']")))
                 .lastName(driver.findElement(By.xpath("//input[@name='lname']")))
