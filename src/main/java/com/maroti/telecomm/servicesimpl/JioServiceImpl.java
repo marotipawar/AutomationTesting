@@ -146,11 +146,5 @@ public class JioServiceImpl implements JioServices {
 
 
 
-    public String getCustId() {
-        return custId;
-    }
 
-    public void setCustId(String custId) {
-        this.custId = custId;
-    }
 }
