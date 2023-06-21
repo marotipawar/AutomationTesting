@@ -120,12 +120,14 @@ public class Saucedemo {
         if(checkElement(cont)){
           cont.click();
         }
+        captureScreenShot(driver,"10_overview.png");
         //step 44: find the finish button
         WebElement finish=driver.findElement(By.xpath("//button[@data-test='finish']"));
         //step 45: click on finish button
         if(checkElement(finish)){
             finish.click();
         }
+        captureScreenShot(driver,"11_order_status.png");
         //step 46: find the back Home button
         WebElement back=driver.findElement(By.xpath("//button[@data-test='back-to-products']"));
         //step 47: click on back home button
@@ -133,7 +135,7 @@ public class Saucedemo {
             back.click();
         }
         //step 48: capture screenshot
-        captureScreenShot(driver,"10_back.png");
+        captureScreenShot(driver,"12_back.png");
     }
     public static void captureScreenShot(WebDriver driver, String fileName) throws IOException {
         TakesScreenshot ts = (TakesScreenshot)driver;
