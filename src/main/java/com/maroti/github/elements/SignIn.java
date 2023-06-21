@@ -17,6 +17,6 @@ public class SignIn {
     @Builder.Default
     private String user = "pawarmw@gmail.com";
     @Builder.Default
-    private String pass = "Maroti@9#";
+    private String pass = "*********";
 
 }

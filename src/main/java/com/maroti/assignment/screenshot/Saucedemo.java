@@ -43,7 +43,7 @@ public class Saucedemo {
         //step 13: check displayed status
         //step 14: check enabled status
         //step 15:click on login button
-        if(btnLogin.isEnabled() && btnLogin.isDisplayed()){
+        if(checkElement(btnLogin)){
             btnLogin.click();
         }
         //Step 16: capture screenshot
