@@ -1,16 +1,14 @@
-package com.maroti.assignment.saucedemo.serviceImpl;
+package com.maroti.saucedemo.serviceImpl;
 
-import com.maroti.assignment.saucedemo.elements.CartElements;
-import com.maroti.assignment.saucedemo.elements.LoginElements;
-import com.maroti.assignment.saucedemo.services.SauceServices;
+import com.maroti.saucedemo.elements.CartElements;
+import com.maroti.saucedemo.elements.LoginElements;
+import com.maroti.saucedemo.services.SauceServices;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SauceServiceImpl implements SauceServices {
     private final WebDriver driver;

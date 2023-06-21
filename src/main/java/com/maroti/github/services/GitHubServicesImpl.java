@@ -1,6 +1,5 @@
 package com.maroti.github.services;
 
-import com.maroti.assignment.saucedemo.elements.LoginElements;
 import com.maroti.github.elements.DeleteRepo;
 import com.maroti.github.elements.NewRepository;
 import com.maroti.github.elements.RepoInfo;

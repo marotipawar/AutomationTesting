@@ -1,7 +1,7 @@
-package com.maroti.assignment.saucedemo.application;
+package com.maroti.saucedemo.application;
 
-import com.maroti.assignment.saucedemo.serviceImpl.SauceServiceImpl;
-import com.maroti.assignment.saucedemo.services.SauceServices;
+import com.maroti.saucedemo.serviceImpl.SauceServiceImpl;
+import com.maroti.saucedemo.services.SauceServices;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SauceShoppingApplication {

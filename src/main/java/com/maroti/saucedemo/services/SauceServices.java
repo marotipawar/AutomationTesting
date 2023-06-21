@@ -1,4 +1,4 @@
-package com.maroti.assignment.saucedemo.services;
+package com.maroti.saucedemo.services;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

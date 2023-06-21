@@ -1,4 +1,4 @@
-package com.maroti.assignment.saucedemo.elements;
+package com.maroti.saucedemo.elements;
 
 import org.openqa.selenium.By;
 

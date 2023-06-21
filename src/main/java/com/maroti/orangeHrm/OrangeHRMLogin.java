@@ -1,4 +1,4 @@
-package com.maroti.assignment.myassignment;
+package com.maroti.orangeHrm;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
