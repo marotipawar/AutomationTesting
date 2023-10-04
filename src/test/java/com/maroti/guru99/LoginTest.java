@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 @Test(groups = "login", dependsOnGroups = "success", priority = 3)
 public class LoginTest {
     private String username;

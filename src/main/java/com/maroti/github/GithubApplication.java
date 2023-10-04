@@ -5,18 +5,18 @@ import com.maroti.github.services.GitHubServicesImpl;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 /*
-* @Developer: Maroti Pawar
-* @Topics   : Create and delete repository in Github application
-*/
+ * @Developer: Maroti Pawar
+ * @Topics   : Create and delete repository in Github application
+ */
 public class GithubApplication {
     public static void main(String[] args) throws InterruptedException {
 
-        GitHubServices github=
-                 GitHubServicesImpl
-                .builder()
-                .driver(new ChromeDriver())
-                .url("https://github.com/")
-                .build();
+        GitHubServices github =
+                GitHubServicesImpl
+                        .builder()
+                        .driver(new ChromeDriver())
+                        .url("https://github.com/")
+                        .build();
         github.homePage();
         github.login();
         Thread.sleep(10000);

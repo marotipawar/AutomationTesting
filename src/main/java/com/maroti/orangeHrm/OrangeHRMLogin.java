@@ -12,7 +12,7 @@ public class OrangeHRMLogin {
         WebDriver driver = new ChromeDriver();
         //Step 2: Open a URL
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        Thread.sleep(8000l);
+        Thread.sleep(8000L);
         //Step 3: find the username text box
         WebElement usernameElement =driver.findElement(By.name("username"));
         //step 4: check username text box displayed status

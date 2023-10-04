@@ -16,7 +16,8 @@ public class JioTeleCommApplication {
 
         StartWebSite site=StartWebSite.builder().driver(new ChromeDriver()).url("https://demo.guru99.com/telecom/index.html").build();
         JioServices services =site.jioServices();
-       //opening browser
+
+        //opening browser
         WebDriver driver=services.start(site.getDriver(),site.getUrl());
 
         //Add new Customer
@@ -30,7 +31,6 @@ public class JioTeleCommApplication {
 
         //Pay bill
         services.payBill();
-
 
 
     }

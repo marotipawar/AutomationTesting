@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 
 public interface JioServices {
-    public WebDriver start(WebDriver driver,String url);
-    public CustomerElement getCustomer();
-    public void addCustomer();
-    public void setTariffPlan();
-    public void addTariffPlanToCustomer();
-    public void payBill();
+    WebDriver start(WebDriver driver,String url);
+    CustomerElement getCustomer();
+    void addCustomer();
+    void setTariffPlan();
+    void addTariffPlanToCustomer();
+    void payBill();
 }

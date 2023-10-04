@@ -76,7 +76,7 @@ public class DropdownAssignment_1 {
            Actions act = new Actions(DRIVER);
            act.moveToElement(day).click().build().perform();
             //System.out.println("Day : "+day.getText());
-        };
+        }
 
         WebElement subject = element(By.xpath("//input[@id='subjectsInput']"));
 

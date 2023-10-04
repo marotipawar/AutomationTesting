@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Saucedemo {
-    private  static File soucedemo;
+    private  static final File soucedemo;
     static {
         soucedemo = new File("soucedemo");
         soucedemo.mkdir();

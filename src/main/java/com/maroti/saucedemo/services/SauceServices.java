@@ -6,9 +6,10 @@ import org.openqa.selenium.WebElement;
 import java.util.Map;
 
 public interface SauceServices {
-    public void login(String username, String password);
-    public void  addItemToCart() throws InterruptedException;
-    public void checkOut();
-    public void deliver();
-    public void finish();
+    void login(String username, String password);
+    void  addItemToCart() throws InterruptedException;
+    void checkOut();
+    void deliver();
+    void finish();
+    WebDriver driver();
 }

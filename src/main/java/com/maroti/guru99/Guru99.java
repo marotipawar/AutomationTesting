@@ -1,26 +1,23 @@
 package com.maroti.guru99;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 /*
-* @Title : Assignment 2
 * @Author: Maroti Pawar
-* @Topic : Fill value in Guru99 Register form using Selenium Automation
-* @Date  : 13-june-2023
 * */
 public class Guru99 {
-
+  static {
+      new File("screenshot").mkdir();
+  }
     // check username text box displayed status and check username text box enabled status
     public static boolean checkTextBoxEnabledOAndDisplayed(WebElement element){
-        if(element.isDisplayed() && element.isEnabled()){
-            return true;
-        }else {
-            return false;
-        }
+        return element.isDisplayed() && element.isEnabled();
     }
 
     // Enter the value in text box
@@ -33,8 +30,13 @@ public class Guru99 {
         });
 
     }
+    public static void fullScreenShot(WebDriver driver,String fileName) throws IOException {
+        TakesScreenshot tk = (TakesScreenshot) driver;
+        File srcFile=tk.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(srcFile, new File("screenshot", fileName));
+    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //Set the Elements and Values
         Map<String, String> register = new HashMap<>();
@@ -57,6 +59,7 @@ public class Guru99 {
         driver.get("https://demo.guru99.com/test/newtours/register.php");
         //Step 3: find the elements and enter the values
         findElementByNameAndSendKeys(driver, register);
+        fullScreenShot(driver, "register.jpg");
         //step 4: capture home page title
         String title=driver.getTitle();
         System.out.println("Title : "+title);

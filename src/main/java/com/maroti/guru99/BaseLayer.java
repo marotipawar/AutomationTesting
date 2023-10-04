@@ -12,20 +12,17 @@ public final class BaseLayer {
 
 
     public WebDriver driver;
-
-    public static String username;
-    public static String userpass;
-
     public static BaseLayer baseLayer;
 
     private BaseLayer(WebDriver driver) {
         this.driver = driver;
         this.driver.get("https://demo.guru99.com/test/newtours/register.php");
-        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
 
     }
 
     public static BaseLayer getInstance(WebDriver driver) {
+
         if (baseLayer == null) {
             baseLayer = new BaseLayer(driver);
         }

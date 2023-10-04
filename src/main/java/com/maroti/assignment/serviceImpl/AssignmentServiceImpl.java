@@ -6,11 +6,11 @@ import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 
 public class AssignmentServiceImpl implements AssignmentServices {
-   private WebDriver driver;
+   private final WebDriver driver;
 
     public AssignmentServiceImpl(WebDriver driver) {
         this.driver = driver;
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8l));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8L));
     }
 
     @Override

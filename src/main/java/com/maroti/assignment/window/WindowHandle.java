@@ -2,8 +2,10 @@ package com.maroti.assignment.window;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class WindowHandle {
@@ -46,9 +48,11 @@ public class WindowHandle {
         driver.findElement(By.xpath("//input[@name='fName']")).sendKeys("Maroti");
         driver.findElement(By.xpath("//input[@name='lName']")).sendKeys("Pawar");
         driver.findElement(By.xpath("//input[@id='malerb']")).click();
-        driver.findElements(By.xpath("//input[@name='language']"))
-                .forEach(checkbox->{
+        List<WebElement> checkboxes =driver.findElements(By.xpath("//input[@name='language']"));
+        checkboxes.forEach(checkbox->{
+                if(checkbox.getText().equals("Hindi")) {
                     checkbox.click();
+                }
                 });
         Thread.sleep(8000);
 
